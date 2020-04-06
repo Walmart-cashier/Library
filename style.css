@@ -7,6 +7,7 @@
 body {
     height: 100%;
     width:100%;
+    background-color:#b7efcd;
 }
 
 .pageTitle h2 {
@@ -18,26 +19,44 @@ body {
 }
 
 .pageTitle{
-    margin: 2vh 0;
+    padding: 2vh 0;
     text-align: center;
+    background-color: #4cd3c2;
+    color:#363636;
 }
-
+button{
+    border: 0;
+}
 .addButton{
     display: flex;
     justify-content: flex-end;
     margin-left:2vw;
-    background-color: black;
-    color: white;
+    background-color:#363636;
+    color:#4cd3c2;
     font-size: 1.4rem;
     padding:0 .5rem;
 }
 
 main {
-    margin: 5vh auto;
+    padding: 5vh 0;
+    margin: 0vh auto;
     max-width: 60vw;
-    border: 1px solid black;
+    min-height: 88vh;
+    background-color: #ffbcbc;
 }
 
+.addbook {
+    display: block;
+    background-color: #363636;
+    color: #4cd3c2;
+}
+.formbackground{
+     background-color: #363636;
+     color: #4cd3c2;
+}
+.hidebook{
+    display: none;
+}
 .books{
    margin: 5vh 0px; 
     display: grid;
@@ -47,8 +66,10 @@ main {
 }
 
 .book{
-    border: 1px solid green;
     padding: 1rem;
+    background-color: #4cd3c2;
+    border: 2px solid #363636;
+    color: #363636;
 }
 .book-title {
     text-transform: uppercase;
@@ -74,11 +95,37 @@ main {
 .delButton {
     text-transform: capitalize;
     font-size: 1.2rem;
-    background-color: black;
-    color: white;
+    background-color:#363636;
+    color: #ffbcbc;
     padding: 0 .5rem;
 }
 
 .plus {
  margin: auto .5rem;
 }
+
+form {
+    margin: 2vh auto;
+    padding: 1rem 0;
+}
+input[type="text"]
+{
+    font-size:1.2rem;
+}
+.submitButton {
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color:#4cd3c2;
+    color:#363636;
+    margin: 2vh auto;
+    padding: 0 .5rem;
+}
+
+.book-detail {
+    display: flex;
+    justify-content:space-around;
+    font-size: 1.4rem;
+}
+
+
