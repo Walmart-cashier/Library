@@ -25,11 +25,14 @@ addBookButton.addEventListener('click',()=>{
     
 //class toggler when hit submit button
 
+    submitForm.addEventListener('click',()=>{
+  addForm.classList.remove('addBook','formbackground');
+  addForm.classList.add('hidebook');
+});
 
     
+    
 
-    
-    
     
     
     
