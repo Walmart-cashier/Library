@@ -116,8 +116,16 @@ form {
   padding: 1rem 0;
 }
 
+form p{
+    color:#ff2626;
+    text-align: center;
+    font-size: 1.2rem;
+}
 input[type="text"] {
   font-size: 1.2rem;
+}
+input:invalid {
+  color: #ff0a0a;
 }
 
 .submitButton {

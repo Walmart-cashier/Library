@@ -20,15 +20,15 @@
         <button class="addButton"> <i class="fas fa-plus fa-sm plus"></i>Add a Book</button>
         <section class="addingBook">
             <div class="hidebook">
-                <form>
+                <form novalidate>
                    <section class="book-detail">
                        <section class="title-section">
                         <label for="book_title">Title :</label>
-                        <input id="book_title" type="text" maxlength="50" minlength="1" required>
+                        <input id="book_title" type="text" maxlength="50" minlength="1" required  pattern="([A-Za-z])\w\D+">
                     </section>
                     <section class="author-section">
                         <label for="book_author">Author :</label>
-                        <input id="book_author" type="text" maxlength="50" minlength="1" required>
+                        <input id="book_author" type="text" maxlength="50" minlength="1" required  pattern="([A-Za-z])\w\D+">
                     </section>
                     <section class="pages-section">
                         <label for="book_pages">Pages :</label>
@@ -36,10 +36,11 @@
                     </section>
                     <section class="read-section">
                         <label>Read The Book ?</label>
-                        <input id="book_yes" type="radio" value="yes" required/> <label for="book_yes">yes</label>
-                        <input id="book_no" type="radio" value="yes" required /> <label for="book_no">No</label>
+                        <input id="book_yes" type="radio" value="yes" required="required"/> <label for="book_yes">yes</label>
+                        <input id="book_no" type="radio" value="no" required="required" /> <label for="book_no">No</label>
                     </section>
                    </section>
+                   <p> </p>
                     <button class="submitButton">Submit</button>
                 </form>
             </div>
