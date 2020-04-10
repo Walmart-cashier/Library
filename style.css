@@ -87,6 +87,8 @@ main {
 .author {
   text-transform: capitalize;
   font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .pages {
