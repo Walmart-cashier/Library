@@ -79,6 +79,12 @@ main {
   color: #363636;
 }
 
+.book_span{
+    background-color:  #b7efcd;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .1rem .4rem;
+}
 .book-title {
   text-transform: uppercase;
   font-size: 1.8rem;
@@ -107,6 +113,7 @@ main {
   background-color: #363636;
   color: #ffbcbc;
   padding: 0 .5rem;
+    margin: .5rem 0rem;
 }
 
 .plus {

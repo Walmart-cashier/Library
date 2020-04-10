@@ -1,7 +1,17 @@
 window.addEventListener('load', () => {
 
     if (localStorage.getItem('book')) {
-        populateDom();
+        if (bookArr[0] == null) {
+            localStorage.removeItem('book');
+            sampleButton();
+        } else {
+            populateDom();
+            attachButtonevents();
+        }
+
+
+    } else {
+        sampleButton();
     }
 
 });
@@ -23,7 +33,7 @@ const books_section = document.querySelector('.books');
 let bookArr = (localStorage.getItem('book') ? JSON.parse(localStorage.getItem('book')) : []);
 
 
-
+//constructor function for book objects
 function BookObj(title, author, pages, readval) {
     this.title = title;
     this.author = author;
@@ -38,7 +48,7 @@ function populateDom() {
     let objArr = JSON.parse(localStorage.getItem('book'));
 
 
-    objArr.forEach((item) => {
+    objArr.forEach((item, index) => {
 
         let book_title = document.createElement('h5');
         book_title.classList.add('book-title');
@@ -58,11 +68,12 @@ function populateDom() {
         let delButton = document.createElement('button');
         delButton.classList.add('delButton');
         delButton.innerHTML = '<i class="fas fa-minus fa-xs"></i> Delete';
+        delButton.setAttribute('data-num', index);
 
         book_title.textContent = item.title;
         author.textContent = 'By, ' + item.author;
         pages.textContent = item.pages + ' Pages';
-        read.textContent = 'Read Status:' + item.readval;
+        read.innerHTML = `Read Status : <span class="book_span" data-num=${index} >${item.readval}</span>`;
 
         book.appendChild(book_title);
         book.appendChild(author);
@@ -71,26 +82,75 @@ function populateDom() {
         book.appendChild(delButton);
 
         books_section.appendChild(book);
+
+
     })
 }
 
-
+function sampleButton(){
+   let sampleButtons=document.querySelectorAll('.delButton');
+   sampleButtons.forEach((item)=>{
+       item.addEventListener('click',function(e){
+           e.toElement.parentElement.style.display='none';
+       })
+   })
+}
 
 function setLocalstorage() {
+
     localStorage.setItem('book', JSON.stringify(bookArr));
     populateDom();
+    attachButtonevents();
 }
 
 function storebook() {
     let title = form_book_title.value;
     let author = form_author.value;
     let pages = form_pages.value;
-    let readval = (form_read_yes ? form_read_yes.value : form_read_no.value);
+    let readval = (form_read_yes.checked ? form_read_yes.value : form_read_no.value);
     let book = new BookObj(title, author, pages, readval);
     bookArr.push(book);
     setLocalstorage();
 }
 
+//on delete remove book
+function attachButtonevents() {
+    let delButtons = document.querySelectorAll('.delButton');
+    delButtons.forEach((item) => {
+        item.addEventListener('click', function (e) {
+            bookArr.splice(e.target.dataset.num, 1);
+            setLocalstorage();
+        })
+    })
+    let spanButtons = document.querySelectorAll('.book_span');
+    spanButtons.forEach((item) => {
+        item.addEventListener('click', function (e) {
+            bookArr[e.target.dataset.num].readval = item.textContent == 'yes' ? 'no' : 'yes';
+            setLocalstorage();
+        })
+    })
+}
+
+//showerror function
+function showError(item) {
+    switch (item.id) {
+        case 'book_title':
+            form_error.textContent = 'Enter words between the length of 1 and 50'
+            break;
+        case 'book_author':
+            form_error.textContent = 'Enter letters between the length of 1 and 50'
+            break;
+        case 'book_pages':
+            form_error.textContent = 'Book must have a min of 5 and max 300 pages'
+            break;
+        case 'book_yes':
+            form_error.textContent = 'did you read the book?'
+            break;
+        case 'book_no':
+            form_error.textContent = 'did you read the book?'
+            break;
+    }
+}
 
 //class toggler for adding book
 addBookButton.addEventListener('click', () => {
@@ -126,34 +186,3 @@ submitFormButton.addEventListener('click', function (event) {
     });
     storebook();
 });
-
-
-
-
-
-
-
-
-
-//showerror function
-function showError(item) {
-    switch (item.id) {
-        case 'book_title':
-            form_error.textContent = 'Enter words between the length of 1 and 50'
-            break;
-        case 'book_author':
-            form_error.textContent = 'Enter letters between the length of 1 and 50'
-            break;
-        case 'book_pages':
-            form_error.textContent = 'Book must have a min of 5 and max 300 pages'
-            break;
-        case 'book_yes':
-            form_error.textContent = 'did you read the book?'
-            break;
-        case 'book_no':
-            form_error.textContent = 'did you read the book?'
-            break;
-    }
-}
-
-//constructor function for book objects
