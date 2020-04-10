@@ -1,154 +1,161 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Baloo Thambi 2', cursive;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  background-color: #b7efcd;
+    height: 100%;
+    width: 100%;
+    background-color: #b7efcd;
 }
 
 .pageTitle h2 {
-  text-align: center;
-  font-size: 3rem;
-  display: inline-block;
-  margin: 0px 10px;
-  text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    display: inline-block;
+    margin: 0px 10px;
+    text-transform: uppercase;
 }
 
 .pageTitle {
-  padding: 2vh 0;
-  text-align: center;
-  background-color: #4cd3c2;
-  color: #363636;
+    padding: 2vh 0;
+    text-align: center;
+    background-color: #4cd3c2;
+    color: #363636;
 }
 
 button {
-  border: 0;
+    border: 0;
 }
 
 .addButton {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 2vw;
-  background-color: #363636;
-  color: #4cd3c2;
-  font-size: 1.4rem;
-  padding: 0 .5rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 2vw;
+    background-color: #363636;
+    color: #4cd3c2;
+    font-size: 1.4rem;
+    padding: 0 .5rem;
 }
 
 main {
-  padding: 5vh 0;
-  margin: 0vh auto;
-  max-width: 60vw;
-  min-height: 88vh;
-  background-color: #ffbcbc;
+    padding: 5vh 0;
+    margin: 0vh auto;
+    max-width: 60vw;
+    min-height: 88vh;
+    background-color: #ffbcbc;
 }
 
 .addbook {
-  display: block;
-  background-color: #363636;
-  color: #4cd3c2;
+    display: block;
+    background-color: #363636;
+    color: #4cd3c2;
 }
 
 .formbackground {
-  background-color: #363636;
-  color: #4cd3c2;
+    background-color: #363636;
+    color: #4cd3c2;
 }
 
 .hidebook {
-  display: none;
-  transition: all 0.5s;
+    display: none;
+    transition: all 0.5s;
 }
 
 .books {
-  margin: 5vh 0px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 2vw;
-  grid-row-gap: 2vh;
+    margin: 5vh 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min(30vh);
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vh;
 }
 
 .book {
-  padding: 1rem;
-  background-color: #4cd3c2;
-  border: 2px solid #363636;
-  color: #363636;
+    padding: 1rem;
+    background-color: #4cd3c2;
+    border: 2px solid #363636;
+    color: #363636;
+    border-left: 2vw solid #363636;
 }
 
-.book_span{
-    background-color:  #b7efcd;
+.book_span {
+    background-color: #b7efcd;
     border: 1px solid black;
     border-radius: 5px;
     padding: .1rem .4rem;
 }
+
 .book-title {
-  text-transform: uppercase;
-  font-size: 1.8rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 .author {
-  text-transform: capitalize;
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .pages {
-  text-transform: capitalize;
-  font-size: 1.3rem;
+    text-transform: capitalize;
+    font-size: 1.3rem;
 }
 
 .read {
-  text-transform: capitalize;
-  font-size: 1.3rem;
+    text-transform: capitalize;
+    font-size: 1.3rem;
 }
 
 .delButton {
-  text-transform: capitalize;
-  font-size: 1.2rem;
-  background-color: #363636;
-  color: #ffbcbc;
-  padding: 0 .5rem;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    background-color: #363636;
+    color: #ffbcbc;
+    padding: 0 .5rem;
     margin: .5rem 0rem;
+    float: right;
 }
 
 .plus {
-  margin: auto .5rem;
+    margin: auto .5rem;
 }
 
 form {
-  margin: 2vh auto;
-  padding: 1rem 0;
+    margin: 2vh auto;
+    padding: 1rem 0;
 }
 
-form p{
-    color:#ff2626;
+form p {
+    color: #ff2626;
     text-align: center;
     font-size: 1.2rem;
 }
+
 input[type="text"] {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
+
 input:invalid {
-  color: #ff0a0a;
+    color: #ff0a0a;
 }
 
 .submitButton {
-  display: block;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  background-color: #4cd3c2;
-  color: #363636;
-  margin: 2vh auto;
-  padding: 0 .5rem;
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color: #4cd3c2;
+    color: #363636;
+    margin: 2vh auto;
+    padding: 0 .5rem;
 }
 
 .book-detail {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.4rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
 }
