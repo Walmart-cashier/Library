@@ -38,6 +38,11 @@ button {
     color: #4cd3c2;
     font-size: 1.4rem;
     padding: 0 .5rem;
+    cursor: pointer;
+    transform: scale(1);
+}
+.addButton:hover{
+    transform: scale(1.05);
 }
 
 main {
@@ -86,8 +91,12 @@ main {
     border: 1px solid black;
     border-radius: 5px;
     padding: .1rem .4rem;
+    cursor: pointer;
+    transform: scale(1); 
 }
-
+.book_span:hover{
+     transform: scale(1.05);
+}
 .book-title {
     text-transform: uppercase;
     font-size: 1.8rem;
@@ -119,8 +128,13 @@ main {
     padding: 0 .5rem;
     margin: .5rem 0rem;
     float: right;
+    cursor: pointer;
+     transform: scale(1);
 }
 
+.delButton:hover{
+     transform: scale(1.05);
+}
 .plus {
     margin: auto .5rem;
 }
@@ -152,8 +166,12 @@ input:invalid {
     color: #363636;
     margin: 2vh auto;
     padding: 0 .5rem;
+    transform: scale(1);
 }
 
+.submitButton:hover{
+    transform: scale(1.05);
+}
 .book-detail {
     display: flex;
     justify-content: space-around;
