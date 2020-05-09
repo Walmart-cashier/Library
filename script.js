@@ -179,7 +179,7 @@ form_inputs.forEach((item) => {
 //on submit too call showerror
 submitFormButton.addEventListener('click', function (event) {
     form_inputs.forEach((item) => {
-        if (!item.validity.valid) {
+        if (!item.validity.valid ||item.value==null) {
             showError(item);
             event.preventDefault();
         }
